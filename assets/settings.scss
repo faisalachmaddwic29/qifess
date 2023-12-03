@@ -1,0 +1,7 @@
+$family: "Quicksand", sans-serif;
+
+@use "vuetify/settings" with (
+    $body-font-family: $family,
+    $field-border-radius: 10px,
+    $font-size-root: 14px,
+);
