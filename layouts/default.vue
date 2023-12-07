@@ -3,6 +3,7 @@
         <NavbarToolbar />
         <NavbarSidebar />
         <v-main class="bg-content">
+            <NavbarTabbar />
             <v-container fluid>
                 <slot />
             </v-container>

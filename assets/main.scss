@@ -1,5 +1,27 @@
+// $family: "Quicksand", sans-serif;
+
+// $body-font-family: $family;
+// $field-border-radius: 10px;
+// $font-size-root: 14px;
+
+// * {
+//     font-family: $family !important;
+// }
+
 .v-list-item__prepend > .v-badge ~ .v-list-item__spacer,
 .v-list-item__prepend > .v-icon ~ .v-list-item__spacer,
 .v-list-item__prepend > .v-tooltip ~ .v-list-item__spacer {
     width: 1rem !important;
+}
+
+.sidebar-profile .v-navigation-drawer--right .v-navigation-drawer__content {
+    overflow-y: hidden !important;
+}
+
+$shadow-key-umbra-opacity: rgba(#1a237e, 0.2);
+$shadow-key-penumbra-opacity: rgba(#1a237e, 0.14);
+$shadow-key-ambient-opacity: rgba(#1a237e, 0.12);
+
+.v-tab.v-tab {
+    padding-inline: 0;
 }

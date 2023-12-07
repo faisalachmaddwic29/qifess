@@ -3,11 +3,16 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    // typescript: { shim: false },
     build: { transpile: ["vuetify"] },
     css: ["vuetify/styles", "@/assets/main.scss"],
+    nitro: {
+        imports: {
+            dirs: ["types/*.ts"],
+        },
+    },
     // sourcemap: { server: false, client: false },
     modules: [
+        "@pinia/nuxt",
         "@nuxtjs/google-fonts",
         "nuxt-icon",
         async (options: any, nuxt: any) => {
@@ -32,12 +37,22 @@ export default defineNuxtConfig({
                 transformAssetUrls,
             },
         },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@use './assets/settings.scss' as *;`,
+                },
+            },
+        },
     },
     googleFonts: {
         families: {
-            Quicksand: [200, 300, 400, 500, 600, 700, 800, 900],
+            Quicksand: [300, 400, 500, 600, 700, 800, 900],
         },
         download: true,
         useStylesheet: true,
+    },
+    experimental: {
+        inlineSSRStyles: false,
     },
 });

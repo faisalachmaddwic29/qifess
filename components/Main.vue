@@ -1,7 +1,7 @@
 <template>
-    <v-picker />
     <label style="margin-bottom: 10px" for="test">FAISAL</label>
     <v-text-field
+        id="test"
         label="Name"
         type="text"
         hide-details
