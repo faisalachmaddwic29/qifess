@@ -2,6 +2,7 @@
     <v-container
         id="information"
         class="h-100 d-flex flex-column justify-space-between"
+        style="overflow: auto"
     >
         <div class="content">
             <div class="item">

@@ -8,7 +8,7 @@
         height="40"
         color="white"
         align-tabs="start"
-        slider-color="#0088ca"
+        slider-color="transparent"
     >
         <v-tab
             v-for="item in tabsStore.dataTabs"
@@ -19,9 +19,22 @@
                 'bg-primary-dark-1': item.value === route.name,
                 'px-2': true,
             }"
-            @click="sidebarStore.isActiveSidebar(item)"
         >
+            <div
+                class="v-tab__slider"
+                style="
+                    height: 4px;
+                    width: 100%;
+                    bottom: 0;
+                    color: #0088ca !important;
+                    caret-color: #0088ca;
+                "
+                :class="{
+                    'opacity-1': item.value === route.name,
+                }"
+            ></div>
             <p
+                @click="sidebarStore.isActiveSidebar(item)"
                 class="text-capitalize font-weight-medium px-4"
                 style="letter-spacing: normal; font-size: 14px"
             >
@@ -31,6 +44,7 @@
 
             <v-btn
                 density="compact"
+                :to="item.path"
                 @click="tabsStore.removeTab(item.path)"
                 icon="mdi-close"
                 size="x-small"
@@ -46,8 +60,6 @@
 const tabsStore = useTabs();
 const sidebarStore = useSidebar();
 const route = useRoute();
-
-console.log(route);
 const tab = ref(route.path);
 </script>
 
