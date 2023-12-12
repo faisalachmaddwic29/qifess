@@ -52,7 +52,11 @@
                 density="default"
                 >Change Password</v-btn
             >
-            <v-btn class="w-100 bg-error text-capitalize" flat density="default"
+            <v-btn
+                @click="logout"
+                class="w-100 bg-error text-capitalize"
+                flat
+                density="default"
                 >Sign Out</v-btn
             >
         </div>
@@ -82,4 +86,24 @@
 }
 </style>
 
-<script></script>
+<script setup>
+const tabsStore = useTabs();
+const logout = async () => {
+    const tokenCookie = useCookie("token");
+
+    await fetchApi("logout", {
+        method: "DELETE",
+        body: JSON.stringify({
+            session_token: tokenCookie.value,
+        }),
+    });
+
+    tokenCookie.value = null;
+
+    tabsStore.clearTabs();
+
+    await navigateTo("/login", {
+        replace: true,
+    });
+};
+</script>

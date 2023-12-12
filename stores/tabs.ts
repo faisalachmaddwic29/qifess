@@ -2,8 +2,11 @@ import { defineStore } from "pinia";
 
 export const useTabs = defineStore("tabs", () => {
     const dataTabs: Ref<(LinkType | null)[]> = ref([]);
-
+    
     const addTab = (route: LinkType) => {
+        const cookie = useCookie("tab");
+        cookie.value = JSON.stringify(route);
+
         if (dataTabs.value.length == 0) {
             dataTabs.value.push(route);
             return;
@@ -16,7 +19,7 @@ export const useTabs = defineStore("tabs", () => {
         if (index === -1) dataTabs.value.push(route);
     };
 
-    const removeTab =  (path: string) => {
+    const removeTab = (path: string) => {
         let index = dataTabs.value.findIndex((tab) => {
             return tab?.path === path;
         });
@@ -38,5 +41,22 @@ export const useTabs = defineStore("tabs", () => {
         }
     };
 
-    return { dataTabs, addTab, removeTab };
+    const clearTabs = () => {
+        dataTabs.value.splice(0, dataTabs.value.length);
+    };
+
+    const getTabFromCookie = () => {
+        const tab = useCookie("tab");
+        if (tab.value) {
+            const data = JSON.parse(JSON.stringify(tab.value));
+            dataTabs.value = [data];
+            return navigateTo({
+                path: data.path,
+                replace: true,
+                force: true,
+            });
+        }
+    };
+
+    return { dataTabs, addTab, removeTab, clearTabs, getTabFromCookie };
 });

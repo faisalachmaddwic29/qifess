@@ -7,9 +7,10 @@ export default defineNuxtConfig({
     css: ["vuetify/styles", "@/assets/main.scss"],
     nitro: {
         imports: {
-            dirs: ["types/*.ts"],
+            dirs: ["types/*.ts", "stores/*.ts"],
         },
     },
+    ssr: false,
     // sourcemap: { server: false, client: false },
     modules: [
         "@pinia/nuxt",
@@ -54,5 +55,8 @@ export default defineNuxtConfig({
     },
     experimental: {
         inlineSSRStyles: false,
+    },
+    runtimeConfig: {
+        API_BASE_URL: process.env.API_BASE_URL,
     },
 });

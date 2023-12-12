@@ -14,6 +14,6 @@
 
 <style scoped>
 .v-main {
-    margin-top: 50px;
+    margin-top: 90px;
 }
 </style>
