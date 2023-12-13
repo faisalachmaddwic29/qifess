@@ -4,7 +4,7 @@
         <NavbarSidebar />
         <v-main class="bg-content">
             <NavbarTabbar />
-            <v-container fluid>
+            <v-container fluid class="pa-2" id="content">
                 <slot />
             </v-container>
         </v-main>

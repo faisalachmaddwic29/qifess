@@ -1,5 +1,5 @@
 <template>
-     <v-container v-resize="onResize">
+     <div v-resize="onResize">
       <v-data-table-server
         :height="__.tableHeight"
         fixed-header
@@ -53,7 +53,7 @@
         </div>
     </template>
     </v-data-table-server>
-  </v-container>
+  </div>
 </template>
 
 <script setup>
@@ -82,7 +82,7 @@
 
     const onResize = () => {
       __.value.tableHeight =
-        window.innerHeight - window.innerHeight * 0.3;
+        window.innerHeight - 170;
     }
 
     const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvb3Jlc2EtZ29kYW0ub21naW5kby5jb21cL2FwaVwvYWRtaW5cL2xvZ2luIiwiaWF0IjoxNzAxMzUzNTc0LCJuYmYiOjE3MDEzNTM1NzQsImp0aSI6IjY3enB5aWRPY2s4MHd4bUwiLCJzdWIiOjEsInBydiI6ImRmODgzZGI5N2JkMDVlZjhmZjg1MDgyZDY4NmM0NWU4MzJlNTkzYTkifQ.H4ePWCL5giWDIYSlGjykwKqbFBUelogckatttGWvM7c"
@@ -96,6 +96,7 @@
 
          await useFetch('http://127.0.0.1:8001/api/admin/log/api', {
             query : query,
+            caches: false,
             headers: {
                 Accept: "application/json",
                 Authorization: "Bearer " + token,
