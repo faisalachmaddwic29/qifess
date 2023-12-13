@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-    if (to.path !== "/login" && to.path !== "/forget-password") {
+    if (to.path !== "/login" && to.path !== "/forget-password" && to.path == '/index') {
         const name = to.name?.toString();
         const cookie = useCookie("tab");
         cookie.value = JSON.stringify({
