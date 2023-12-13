@@ -4,9 +4,6 @@ export const useTabs = defineStore("tabs", () => {
     const dataTabs: Ref<(LinkType | null)[]> = ref([]);
     
     const addTab = (route: LinkType) => {
-        const cookie = useCookie("tab");
-        cookie.value = JSON.stringify(route);
-
         if (dataTabs.value.length == 0) {
             dataTabs.value.push(route);
             return;
