@@ -80,7 +80,6 @@
       tableHeight: 0,
     })
 
-
     const onResize = () => {
       __.value.tableHeight =
         window.innerHeight - 170;
