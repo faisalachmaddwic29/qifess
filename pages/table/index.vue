@@ -56,8 +56,6 @@
   </div>
 </template>
 
-
-
 <script setup>
     const headers = ref([
         {
