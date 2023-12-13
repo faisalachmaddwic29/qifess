@@ -116,5 +116,70 @@ const links = [
             },
         ],
     },
+    {
+        title: "Address",
+        items: [
+            {
+                path: "/maps",
+                icon: "mdi-map-marker",
+                name: "Maps",
+                value: "maps",
+            },
+            {
+                path: "/info",
+                icon: "mdi-information",
+                name: "Info",
+                value: "info",
+            },
+        ],
+    },
+
+    {
+        title: "Profile",
+        items: [
+            {
+                path: "/user",
+                icon: "mdi-map-marker",
+                name: "User",
+                value: "user",
+            },
+            {
+                path: "/test",
+                icon: "mdi-information",
+                name: "Test",
+                value: "test",
+            },
+        ],
+    },
+
+    {
+        title: "Settings",
+        items: [
+            {
+                path: "/change-password",
+                icon: "mdi-map-marker",
+                name: "Change Password",
+                value: "change-password",
+            },
+            {
+                path: "/edit-profile",
+                icon: "mdi-information",
+                name: "Edit Profile",
+                value: "edit-profile",
+            },
+            {
+                path: "/monitor-user",
+                icon: "mdi-information",
+                name: "Monitor User",
+                value: "monitor-user",
+            },
+            {
+                path: "/permen-iklan",
+                icon: "mdi-information",
+                name: "Permen Iklan",
+                value: "permen-iklan",
+            },
+        ],
+    },
 ];
 </script>

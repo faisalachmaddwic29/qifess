@@ -2,7 +2,12 @@
     <v-sheet class="h-100 w-100 position-relative bg-login">
         <v-card
             class="position-absolute px-8 py-8"
-            style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
+            style="
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.9;
+            "
             min-width="400"
         >
             <v-card-title class="text-center mb-5">
@@ -53,12 +58,18 @@
 
             <div class="mx-auto d-block text-center">
                 <NuxtLink to="/forget-password" class="mt-5 d-inline-block">
-                    <span
-                        class="text-decoration-underline text-center font-weight-bold"
+                    <p
+                        class="text-decoration-underline text-center font-weight-bold text-info"
                     >
                         Forget Password
-                    </span>
+                    </p>
                 </NuxtLink>
+                <p
+                    class="mt-5 font-weight-black"
+                    style="font-size: 11px; color: #606468"
+                >
+                    Qifess ©2022, Version 2.0 [SERVER]
+                </p>
             </div>
         </v-card>
     </v-sheet>

@@ -1,12 +1,6 @@
 <template>
     <div
-        style="
-            position: fixed;
-            top: 50px;
-            width: 100%;
-            z-index: 1;
-            background-color: white;
-        "
+        style="position: fixed; top: 50px; width: 100%; background-color: white"
     >
         <v-tabs
             v-model="tab"
