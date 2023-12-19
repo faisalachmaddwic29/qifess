@@ -1,5 +1,5 @@
 <template>
-    <v-footer inset app class="bg-content right-0">
+    <v-footer inset app class="bg-content">
         <p class="text-caption">QIFESS-V3.0 (SERVER)</p>
         <v-spacer></v-spacer>
         <p class="text-caption">QUALITA INDONESIA ©2022</p>

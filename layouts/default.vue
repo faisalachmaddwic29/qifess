@@ -2,8 +2,8 @@
     <v-app>
         <NavbarToolbar />
         <NavbarSidebar />
+        <NavbarTabbar />
         <v-main class="bg-content">
-            <NavbarTabbar />
             <v-container fluid class="pa-2" id="content">
                 <slot />
             </v-container>

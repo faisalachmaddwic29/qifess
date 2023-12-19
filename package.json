@@ -22,7 +22,6 @@
         "vuetify": "^3.4.4"
     },
     "dependencies": {
-        "@nuxtjs/dotenv": "^1.4.1",
         "@pinia/nuxt": "^0.5.1",
         "pinia": "^2.1.7"
     }

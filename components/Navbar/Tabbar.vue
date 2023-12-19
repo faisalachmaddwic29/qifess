@@ -1,6 +1,18 @@
 <template>
     <div
-        style="position: fixed; top: 50px; width: 100%; background-color: white"
+        style="
+            position: fixed;
+            top: 50px;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background-color: #ffffff;
+            transition: all 0.2s ease;
+        "
+        :style="{
+            right: sidebarStore.profile ? '300px' : '0',
+            left: sidebarStore.sidebar ? '256px' : '0',
+        }"
     >
         <v-tabs
             v-model="tab"
@@ -19,7 +31,8 @@
                 :key="item.path"
                 :value="item.value"
                 :class="{
-                    'bg-primary-dark-1': item.value === route.name,
+                    'bg-primary-dark-1':
+                        item.value === route.path.split('/')[1],
                     'px-2': true,
                 }"
             >
@@ -33,7 +46,7 @@
                         caret-color: #0088ca;
                     "
                     :class="{
-                        'opacity-1': item.value === route.name,
+                        'opacity-1': item.value === route.path.split('/')[1],
                     }"
                 ></div>
                 <p
@@ -69,7 +82,7 @@ const tab = ref(route.path);
 </script>
 
 <style scoped>
-.v-tabs {
+.v-tab[aria-selected="false"] {
     color: #bbbbbb;
 }
 
