@@ -91,7 +91,7 @@ const tabsStore = useTabs();
 const logout = async () => {
     const tokenCookie = useCookie("token");
 
-    await fetchApi("logout", {
+    await fetchAuth("logout", {
         method: "DELETE",
         body: JSON.stringify({
             session_token: tokenCookie.value,

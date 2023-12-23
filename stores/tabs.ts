@@ -2,7 +2,8 @@ import { defineStore } from "pinia";
 
 export const useTabs = defineStore("tabs", () => {
     const dataTabs: Ref<(LinkType | null)[]> = ref([]);
-    
+    const tab = useCookie("tab");
+
     const addTab = (route: LinkType) => {
         if (dataTabs.value.length == 0) {
             dataTabs.value.push(route);
@@ -30,6 +31,7 @@ export const useTabs = defineStore("tabs", () => {
                 force: true,
             });
         } else {
+            tab.value = null;
             return navigateTo({
                 path: "/",
                 replace: true,
@@ -43,7 +45,6 @@ export const useTabs = defineStore("tabs", () => {
     };
 
     const getTabFromCookie = () => {
-        const tab = useCookie("tab");
         if (tab.value) {
             const data = JSON.parse(JSON.stringify(tab.value));
             dataTabs.value = [data];
