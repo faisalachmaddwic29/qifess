@@ -179,6 +179,12 @@ const links = [
                 name: "Permen Iklan",
                 value: "permen-iklan",
             },
+            {
+                path: "/user-manager",
+                icon: "mdi-account-group",
+                name: "User Manager",
+                value: "user-manager",
+            },
         ],
     },
 ];
