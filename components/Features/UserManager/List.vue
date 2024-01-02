@@ -17,7 +17,7 @@
     </template>
     <template v-slot:item.photo="{ value }">
       <v-avatar size="30">
-          <v-img src="~/assets/images/user.png" alt="{{ value }}" />
+          <v-img src="~/assets/images/user.png" :alt="value" />
       </v-avatar>
       </template>
       <template v-slot:item.role="{ value }">
