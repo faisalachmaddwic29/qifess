@@ -1,5 +1,5 @@
 <template>
     <div>
-        <p>Headlights</p>
+        <p>Maps</p>
     </div>
 </template>

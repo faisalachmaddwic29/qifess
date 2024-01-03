@@ -10,6 +10,9 @@ export default defineNuxtConfig({
             dirs: ["types/*.ts", "stores/*.ts"],
         },
     },
+    components: {
+        dirs: ["components", "features"],
+    },
     ssr: false,
     // sourcemap: { server: false, client: false },
     modules: [

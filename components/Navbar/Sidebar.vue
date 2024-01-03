@@ -25,7 +25,7 @@
                 :prepend-icon="item.icon"
                 :value="item.value"
                 :to="item.path"
-                :active="item.value === route.name"
+                :active="item.value === route.path.split('/')[1]"
                 @click="sidebarStore.isActiveSidebar(item, 'sidebar')"
             >
                 <v-list-item-title
@@ -100,23 +100,6 @@ const links = [
         ],
     },
     {
-        title: "Phone",
-        items: [
-            {
-                path: "/contact",
-                icon: "mdi-contacts",
-                name: "Contact",
-                value: "contact",
-            },
-            {
-                path: "/headlight",
-                icon: "mdi-light-flood-down",
-                name: "Headlight",
-                value: "headlight",
-            },
-        ],
-    },
-    {
         title: "Address",
         items: [
             {
@@ -125,60 +108,11 @@ const links = [
                 name: "Maps",
                 value: "maps",
             },
-            {
-                path: "/info",
-                icon: "mdi-information",
-                name: "Info",
-                value: "info",
-            },
         ],
     },
-
-    {
-        title: "Profile",
-        items: [
-            {
-                path: "/user",
-                icon: "mdi-map-marker",
-                name: "User",
-                value: "user",
-            },
-            {
-                path: "/test",
-                icon: "mdi-information",
-                name: "Test",
-                value: "test",
-            },
-        ],
-    },
-
     {
         title: "Settings",
         items: [
-            {
-                path: "/change-password",
-                icon: "mdi-map-marker",
-                name: "Change Password",
-                value: "change-password",
-            },
-            {
-                path: "/edit-profile",
-                icon: "mdi-information",
-                name: "Edit Profile",
-                value: "edit-profile",
-            },
-            {
-                path: "/monitor-user",
-                icon: "mdi-information",
-                name: "Monitor User",
-                value: "monitor-user",
-            },
-            {
-                path: "/permen-iklan",
-                icon: "mdi-information",
-                name: "Permen Iklan",
-                value: "permen-iklan",
-            },
             {
                 path: "/user-manager",
                 icon: "mdi-account-group",

@@ -1,5 +1,4 @@
 <template>
-    <FeaturesUserManagerList />
+    <UserManagerList />
 </template>
-<script setup>
-</script>
+<script setup></script>
